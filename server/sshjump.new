@@ -1,25 +1,27 @@
 #!/bin/bash
 
+dir=/opt/sshjump
+
 arg1=$1
 
 if [ $arg1 = list ]; then
-        sqlite3 /opt/sshjump/sshjump.db 'select host,id from sshjump'
+        sqlite3 $dir/sshjump.db 'select host,id from sshjump'
 
 elif [ $arg1 = host ]; then
         user=$2
         host=$3
-        port=$(sqlite3 /opt/sshjump/sshjump.db "select port from sshjump where host = \"$host\"")
+        port=$(sqlite3 $dir/sshjump.db "select port from sshjump where host = \"$host\"")
         ssh -p $port $user@localhost
 
 elif [ $arg1 = id ]; then
         user=$2
         id=$3
-        port=$(sqlite3 /opt/sshjump/sshjump.db "select port from sshjump where id = \"$id\"")
+        port=$(sqlite3 $dir/sshjump.db "select port from sshjump where id = \"$id\"")
         ssh -p $port $user@localhost
         
 elif [ $arg1 = del ]; then
         id=$2
-        sqlite3 /opt/sshjump/sshjump.db "delete from sshjump where id = \"$id\""
+        sqlite3 $dir/sshjump.db "delete from sshjump where id = \"$id\""
 
 elif [ $arg1 = help ]; then
         echo "list: show list of devices"
