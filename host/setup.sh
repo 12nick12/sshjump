@@ -14,7 +14,7 @@ ssh-keygen -t rsa -f $dir/id_rsa -q -N ""
 
 chmod 400 $dir/id_rsa*
 
-cat $dir/id_rsa.pub | ssh -p $serverport root@remotehost.com "mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat >> ~/.ssh/authorized_keys"
+cat $dir/id_rsa.pub | ssh -p $serverport $username@$servername "mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat >> ~/.ssh/authorized_keys"
 
 sqlite3 $dir/sshjump.db 'create table sshjump(host, ip, port, id);'
 
