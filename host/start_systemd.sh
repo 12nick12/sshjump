@@ -2,7 +2,7 @@
 
 dir=/opt/sshjump
 serverhost=user@test.test.com
-serviceport=22333
+serviceport=22
 remoteport=$(sqlite3 $dir/sshjump.db 'select port from sshjump')
 localport=22
 
