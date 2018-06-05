@@ -3,7 +3,7 @@ Description=sshJump
 After=network-online.target
 
 [Service]
-ExecStart=/opt/sshjump/start.sh
+ExecStart=/opt/sshjump/start_systemd.sh
 
 [Install]
 WantedBy=multi-user.target
