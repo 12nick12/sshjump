@@ -9,13 +9,13 @@ fi
 if [ $arg1 = host ]; then
         user=$2
         host=$3
-        port=$(sqlite3 /opt/sshjump/sshjump.db 'select port from sshjump where host = host')
+        port=$(sqlite3 /opt/sshjump/sshjump.db "select port from sshjump where host = \"$host\"")
         ssh -p $port $user@localhost
 fi
 
 if [ $arg1 = id ]; then
         user=$2
         id=$3
-        port=$(sqlite3 /opt/sshjump/sshjump.db 'select port from sshjump where id = id')
+        port=$(sqlite3 /opt/sshjump/sshjump.db "select port from sshjump where id = \"$id\"")
         ssh -p $port $user@localhost
 fi
