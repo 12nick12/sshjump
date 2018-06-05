@@ -1,0 +1,9 @@
+[Unit]
+Description=sshJump
+After=network-online.target
+
+[Service]
+ExecStart=/opt/sshjump/start.sh
+
+[Install]
+WantedBy=multi-user.target
