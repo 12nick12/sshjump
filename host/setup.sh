@@ -6,8 +6,6 @@ port=$(shuf -i 9151-49151 -n 1)
 id=$(shuf -i 111111111-999999999 -n 1 )
 dir=/opt/sshjump
 
-mkdir $dir
-
 ssh-keygen -t rsa -f $dir/id_rsa -q -N ""
 
 chmod 400 $dir/id_rsa*
