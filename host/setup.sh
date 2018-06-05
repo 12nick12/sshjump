@@ -1,6 +1,6 @@
 #!/bin/bash
 
-serverport=22333
+serverport=22
 servername=test.test.com
 username=root
 
