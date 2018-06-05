@@ -1,6 +1,8 @@
 #!/bin/bash
 
 serverport=22333
+servername=test.test.com
+username=root
 
 host=$(hostname)
 ip=$(curl -s https://canihazip.com/s)
@@ -18,4 +20,4 @@ sqlite3 $dir/sshjump.db 'create table sshjump(host, ip, port, id);'
 
 sqlite3 $dir/sshjump.db "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");"
 
-echo "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");" | ssh -p 22333 root@remotessh.nicks.tv "sqlite3 /opt/sshjump/sshjump.db"
+echo "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");" | ssh -p 22333 $username@$servername "sqlite3 $dir/sshjump.db"
