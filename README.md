@@ -9,6 +9,8 @@ apt install sqlite3 autossh
 CentOS
 yum install sqlite3 autossh
 
+After installing everything you go on the server and use createdatabase.sh then you go to the hosts and run host/setup.sh. After the setup.sh has been ran you can run the host/start.sh on the host in a tmux or in the background. Once that's running you should be able to use the main sshjump.new script to ssh to the other devices. As far as I know the autossh should reconnect on disconnect. 
+
 I will update with systemd scripts eventually
 
 To use the main script once all devices are connected you can type "./sshjump.new list" this will list all hosts that have been registered
