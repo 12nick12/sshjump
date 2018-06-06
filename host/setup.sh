@@ -20,4 +20,4 @@ sqlite3 $dir/sshjump.db 'create table sshjump(host, ip, port, id);'
 
 sqlite3 $dir/sshjump.db "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");"
 
-echo "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");" | ssh -p $serverport $username@$servername "sqlite3 $dir/sshjump.db"
+echo "INSERT INTO sshjump(host, ip, port, id) VALUES(\"$host\", \"$ip\", \"$port\", \"$id\");" | ssh -i $dir/id_rsa -p $serverport $username@$servername "sqlite3 $dir/sshjump.db"
