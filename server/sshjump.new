@@ -23,7 +23,7 @@ elif [ $arg1 = del ]; then
         id=$2
         sqlite3 $dir/sshjump.db "delete from sshjump where id = \"$id\""
 
-elif [ $arg1 = help ]; then
+else
         echo "list: show list of devices"
         echo "host username device"
         echo "id username deviceID"
