@@ -1,7 +1,7 @@
 #!/bin/bash
 
 servername=site.site.com
-username=root
+username=sshjump
 serverport=22
 dir=/opt/sshjump
 remoteport=$(sqlite3 $dir/sshjump.db 'select port from sshjump')
