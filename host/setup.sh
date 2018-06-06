@@ -2,7 +2,7 @@
 
 serverport=22
 servername=test.test.com
-username=root
+username=sshjump
 
 host=$(hostname)
 ip=$(curl -s https://canihazip.com/s)
