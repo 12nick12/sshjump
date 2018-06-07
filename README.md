@@ -15,7 +15,7 @@ I will update with systemd scripts eventually
 
 To use the main script once all devices are connected you can type "./sshjump.new list" this will list all hosts that have been registered
 
-The report printers first the hostname then the ID
+The report prints first the hostname then the ID
 
 If you want to connect with ID you type "./sshjump.new id user $id" ex "./sshjump.new id nick 123321456"
 
